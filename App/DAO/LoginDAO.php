@@ -75,4 +75,13 @@ class LoginDAO extends DAO
 
         $stmt->execute();
     }
+
+    public function delete($id){
+        $sql = "DELETE FROM usuarios WHERE id= ?";
+
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $id);
+
+        $stmt->execute();
+    }
 }
